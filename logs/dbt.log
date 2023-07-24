@@ -1,0 +1,95 @@
+[0m19:49:30.666171 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f57c7588610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f57c6050a60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f57c6050a30>]}
+
+
+============================== 19:49:30.689032 | 338e1760-693f-464d-aa65-f1ac68af5a08 ==============================
+[0m19:49:30.689032 [info ] [MainThread]: Running with dbt=1.5.3
+[0m19:49:30.691653 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/ana/.dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'send_anonymous_usage_stats': 'True'}
+[0m19:49:30.693525 [warn ] [MainThread]: [ConfigFolderDirectory]: Unable to parse dict {'dir': PosixPath('/home/ana/.dbt')}
+[0m19:49:30.695294 [info ] [MainThread]: Creating dbt configuration folder at 
+[0m19:49:30.699016 [debug] [MainThread]: Starter project path: /home/ana/anaconda3/envs/brt/lib/python3.8/site-packages/dbt/include/starter_project
+[0m19:49:41.920696 [info ] [MainThread]: Profile rio_brt_data written to /home/ana/.dbt/profiles.yml using target's sample configuration. Once updated, you'll be able to start developing with dbt.
+[0m19:49:41.921347 [info ] [MainThread]: 
+Your new dbt project "rio_brt_data" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m19:49:41.922118 [debug] [MainThread]: Command `dbt init` succeeded at 19:49:41.921986 after 11.34 seconds
+[0m19:49:41.922503 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f57c7588610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f57ca6804f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f57c607a7c0>]}
+[0m19:49:41.922921 [debug] [MainThread]: Flushing usage events
+[0m20:07:47.513120 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5760ac8670>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f575f38e580>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f575f38e6a0>]}
+
+
+============================== 20:07:47.516006 | d0f146ed-753d-45ea-9220-6e798f386da7 ==============================
+[0m20:07:47.516006 [info ] [MainThread]: Running with dbt=1.5.3
+[0m20:07:47.516753 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'logs', 'debug': 'False', 'profiles_dir': '/home/ana/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'send_anonymous_usage_stats': 'True'}
+[0m20:07:47.517293 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /home/ana/emd-desafio-data-eng_ana_carolina_gomes/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m20:07:47.518060 [debug] [MainThread]: Command `dbt run` failed at 20:07:47.517930 after 0.04 seconds
+[0m20:07:47.518456 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5760ac8670>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f575f38e610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f575f38ef10>]}
+[0m20:07:47.518884 [debug] [MainThread]: Flushing usage events
+[0m20:49:45.643923 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f20fe7c8610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f20fd290670>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f20fd2906d0>]}
+
+
+============================== 20:49:45.646818 | effeac06-bfc9-4f01-8a49-682a11d42dca ==============================
+[0m20:49:45.646818 [info ] [MainThread]: Running with dbt=1.5.3
+[0m20:49:45.647484 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/ana/.dbt', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': 'logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'send_anonymous_usage_stats': 'True'}
+[0m20:49:45.648446 [debug] [MainThread]: Starter project path: /home/ana/anaconda3/envs/brt/lib/python3.8/site-packages/dbt/include/starter_project
+[0m20:49:55.267587 [info ] [MainThread]: 
+Your new dbt project "brt_data" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m20:49:55.268490 [debug] [MainThread]: Command `dbt init` succeeded at 20:49:55.268336 after 9.66 seconds
+[0m20:49:55.268934 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f20fe7c8610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f20fd040310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f20fd2bdd30>]}
+[0m20:49:55.269378 [debug] [MainThread]: Flushing usage events
+[0m22:57:23.443120 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2135488610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2133d0f670>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2133d0f6d0>]}
+
+
+============================== 22:57:23.458091 | 2fe09833-4b2e-4e3a-877e-ee5ec0cc804e ==============================
+[0m22:57:23.458091 [info ] [MainThread]: Running with dbt=1.5.3
+[0m22:57:23.459017 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': 'logs', 'fail_fast': 'False', 'profiles_dir': '/home/ana/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'target_path': 'None', 'send_anonymous_usage_stats': 'True'}
+[0m22:57:23.460022 [debug] [MainThread]: Starter project path: /home/ana/anaconda3/envs/brt/lib/python3.8/site-packages/dbt/include/starter_project
+[0m22:57:26.911276 [info ] [MainThread]: 
+Your new dbt project "rio_brt_data" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m22:57:26.912275 [debug] [MainThread]: Command `dbt init` succeeded at 22:57:26.912080 after 3.50 seconds
+[0m22:57:26.912746 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2135488610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f21337b9310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2133d3dd30>]}
+[0m22:57:26.913198 [debug] [MainThread]: Flushing usage events

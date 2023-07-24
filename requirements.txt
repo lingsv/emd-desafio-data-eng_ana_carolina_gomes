@@ -1,0 +1,5 @@
+prefect==0.15.9
+pandas
+requests
+dbt-core
+psycopg2-binaty

@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: rio_brt_data
+    database: prefect
+    schema: public
+    tables:
+      - name: rio_brt_data
