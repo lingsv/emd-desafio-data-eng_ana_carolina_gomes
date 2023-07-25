@@ -33,3 +33,7 @@ models:
   +schema: public
     # Config indicated by + and applies to all files under models/example/
   materialized: table
+
+  select_data_brt:
+  +schema: public
+  +materialized: view

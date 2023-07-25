@@ -6,3 +6,43 @@ sources:
     schema: public
     tables:
       - name: rio_brt_data
+        description: "Table with BRT data for the last 10 minutes."
+        columns:
+          - name: codigo
+            description: "The bus code"
+          - name: placa
+            description: "The vehicle license plate"
+          - name: linha
+            description: "The bus route"
+          - name: latitude
+            description: "The vehicle latitude"
+          - name: longitude
+            description: "The vehicle longitude"
+          - name: dataHora
+            description: "Time stamp"
+          - name: velocidade
+            description: "The bus velocity"
+          - name: id_migracao_trajeto
+            description: "The bus route id"
+          - name: sentido
+            description: "The bus direction"
+          - name: trajeto
+            description: "The bus itinerary"
+          - name: hodometro
+            description: "The bus odometer"
+          - name: direcao
+            description: "The bus physical direction"
+
+      - name: select_data_brt
+        description: "View of the main table."
+        columns:
+          - name: codigo
+            description: "The bus code"
+          - name: latitude
+            description: "The vehicle latitude"
+          - name: longitude
+            description: "The vehicle longitude"
+          - name: velocidade
+            description: "The bus velocity"
+          - name: direcao
+            description: "The bus physical direction"

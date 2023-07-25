@@ -15,11 +15,20 @@
 -- O DBT criará a tabela automaticamente com base na consulta SELECT
 SELECT
     codigo,
+    placa,
+    linha,
     latitude,
     longitude,
-    velocidade 
+    dataHora,
+    velocidade,
+    id_migracao_trajeto,
+    sentido,
+    trajeto,
+    hodometro,
+    direcao
+
 FROM {{ source('rio_brt_data', 'rio_brt_data') }}
-GROUP BY codigo,latitude, longitude, velocidade
+
 /*
     Uncomment the line below to remove records with null `id` values
 */
