@@ -18,5 +18,3 @@ with Flow('Extracting BRT data') as flow:
     save_data_to_csv(dataframe_brt)
     load_data_to_postgres(dataframe_brt)
 
-#with Flow('Load databse to DBT') as flow:
-#    load_to_dbt()
