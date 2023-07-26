@@ -78,7 +78,7 @@ Repositório de instrução para o desafio técnico para vaga de Pessoa Engenhei
 
 ## Como executar o pipeline
 
-1. Clone o repositório ``;
+1. Clone o repositório `https://github.com/lingsv/emd-desafio-data-eng_ana_carolina_gomes.git`;
 3. Navegue até a pasta do projeto;
 4. Crie um ambiente Python localmente
 5. Ative o ambiente e digite `pip install -r requirements.txt`;
