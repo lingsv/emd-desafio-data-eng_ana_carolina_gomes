@@ -3,16 +3,12 @@ import json
 import os
 import time
 
-# import dbt.cli as dbt
 import pandas as pd
 import psycopg2
 import requests
 from prefect import task
 from psycopg2 import extras
 from utils import log
-
-# from prefect_dbt.cli.configs import PostgresTargetConfigs
-# from prefect_sqlalchemy import DatabaseCredentials, SyncDriver
 
 
 @task
@@ -27,7 +23,7 @@ def get_brt_data(url: str) -> str:
     """
     dados_api = []
 
-    for i in range(1):
+    for i in range(10):
 
         try:
             response = requests.get(url)
@@ -65,9 +61,9 @@ def process_data(data) -> pd.DataFrame:
 def save_data_to_csv(dataframe: pd.DataFrame) -> None:
     """Saves the dataframe into a CSV file.
     Args:
-        dataframe (pd.DataFrame): The dataframe taht will be saved.
+        dataframe (pd.DataFrame): The dataframe that will be saved.
     """
-    dataframe.to_csv('dados_brt.csv', index=False)
+    dataframe.to_csv('data/dados_brt.csv', index=False)
     log('Data saved to CSV.')
 
 
@@ -119,32 +115,3 @@ def load_data_to_postgres(data: pd.DataFrame) -> None:
     connection_string.close()
 
     log('Loaded data to postgres.')
-
-
-'''
-@task
-def load_to_dbt():
-
-    with open('credentials.json', 'r') as file:
-        credentials = json.load(file)
-
-    credentials = DatabaseCredentials(
-        driver=SyncDriver.POSTGRESQL_PSYCOPG2,
-        username=credentials['user'],
-        password=credentials['password'],
-        database=credentials['database'],
-        host=credentials['host'],
-        port=8080
-)
-    target_configs = PostgresTargetConfigs(credentials=credentials, schema="schema")
-
-    log('Loaded database credentials.')
-
-    args = [
-        "run",
-        "--profiles-dir", "/home/carol/Documentos/Repos/dbt-files/brt/dbt_project.yml",
-        "--project-dir", "/home/carol/Documentos/Repos/dbt-files/brt/",
-    ]
-
-    dbt
-'''

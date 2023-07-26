@@ -2,42 +2,104 @@
 
 Repositório de instrução para o desafio técnico para vaga de Pessoa Engenheira de Dados no Escritório de Dados do Rio de Janeiro
 
-## Descrição do desafio
+## Árvore de diretórios
 
-Neste desafio você deverá capturar, estruturar, armazenar e transformar dados de uma API instantânea. A API consiste nos dados de GPS do BRT que são gerados na hora da consulta com o último sinal transmitido por cada veículo.
+```bash
+.
+├── docs
+│   └── README.md
+├── logs
+│   └── dbt.log
+├── pipelines
+│   ├── credentials.json
+│   ├── data
+│   │   └── dados_brt.csv
+│   ├── flows.py
+│   ├── __init__.py
+│   ├── run.py
+│   ├── tasks.py
+│   └── utils.py
+├── README.md
+├── requirements.txt
+└── rio_brt_data
+    ├── dbt_project.yml
+    ├── dev
+    │   ├── compiled
+    │   │   └── rio_brt_data
+    │   │       └── models
+    │   │           └── example
+    │   │               ├── my_first_dbt_model.sql
+    │   │               └── my_second_dbt_model.sql
+    │   ├── graph.gpickle
+    │   ├── manifest.json
+    │   ├── partial_parse.msgpack
+    │   ├── run
+    │   │   └── rio_brt_data
+    │   │       └── models
+    │   │           └── example
+    │   │               ├── my_first_dbt_model.sql
+    │   │               └── my_second_dbt_model.sql
+    │   └── run_results.json
+    ├── logs
+    │   └── dbt.log
+    ├── models
+    │   ├── rio_brt_data.sql
+    │   ├── schema.yml
+    │   └── select_data_brt.sql
+    ├── README.md
+    └── tests
+```
 
-Para o desafio, será necessário construir uma pipeline que captura os dados minuto a minuto e gera um arquivo no formato CSV. O arquivo gerado deverá conter no mínimo 10 minutos de dados capturados (estruture os dados da maneira que achar mais conveniente), então carregue os dados para uma tabela no Postgres. Por fim, crie uma tabela derivada usando o DBT. A tabela derivada deverá conter o ID do onibus, posição e sua a velocidade.
+## Pastas e arquivos
 
-A pipeline deverá ser construída subindo uma instância local do Prefect (em Python). Utilize a versão *0.15.9* do Prefect.
+### Pipelines
 
-## O que iremos avaliar
+**Descrição**: Pasta com os arquivos do pipeline Prefect.
 
-- Completude: A solução proposta atende a todos os requisitos do desafio?
-- Simplicidade: A solução proposta é simples e direta? É fácil de entender e trabalhar?
-- Organização: A solução proposta é organizada e bem documentada? É fácil de navegar e encontrar o que se procura?
-- Criatividade: A solução proposta é criativa? Apresenta uma abordagem inovadora para o problema proposto?
-- Boas práticas: A solução proposta segue boas práticas de Python, Git, Docker, etc.?
+|Nome|Descrição|
+|-------|---------|
+|flows.py| Arquivo com os flows a serem executados|
+|tasks.py| Arquivo com as tasks a serem executadas.|
+|utils.py| Arquivo de utilidades do projeto Prefect.|
+|run.py| Arquivo que executa o pipeline.|
+|data| Pasta que recebe o arquivo CSV gerado no pipeline.|
 
-## Atenção
+### rio_brt_data
 
-- A solução desse desafio deve ser publicada em um fork deste repositório no GitHub.
-- O link do repositório deve ser enviado até às 23:59, horário de Brasília, do dia 26 de julho de 2023 (quarta-feira) para o e-mail utilizado para contato com o assunto "Desafio Data Engineer - EMD".
-- Você deve ser capaz de apresentar sua solução, explicando como a idealizou, caso seja aprovado(a) para a próxima etapa.
+**Descrição**: Pasta com os arquivos do projeto dbt.
 
-## Links de referência / utilidades
+|Nome|Descrição|
+|-------|---------|
+|models| Pasta com os modelos dbt.|
+|models/rio_brt_data.sql| Modelo que cria a tabela.|
+|models/select_data_brt.sql| Modelo que cria a view do desafio.|
+|models/schema.yml| Arquivo que documenta os modelos.|
+|dbt_project_yml| Arquivo com as configurações do dbt.|
 
-- Documentação [Prefect](https://docs-v1.prefect.io/)
-- Documentação [DBT](https://docs.getdbt.com/docs/introduction)
-- Instalar e configurar o
-   [Prefect Server](https://docs.prefect.io/orchestration/getting-started/install.html)
-   locamente com um [Docker Agent](https://docs.prefect.io/orchestration/agents/docker.html)
-- Construir a pipeline de captura da [API do
-   BRT](https://dados.mobilidade.rio/gps/brt)
-- Repositório pipelines do [Escritorio de Dados](https://github.com/prefeitura-rio/pipelines)
-- Repositório de modelos DBT do [Escritorio de Dados](https://github.com/prefeitura-rio/queries-datario)
+## Como executar o pipeline
 
+1. Clone o repositório ``;
+3. Navegue até a pasta do projeto;
+4. Crie um ambiente Python localmente
+5. Ative o ambiente e digite `pip install -r requirements.txt`;
+6. Configure uma instância local do PostgreSQL;
+7. Crie um arquivo credentials.json na pasta **pipelines**;
+8. O arquivo deve ter este template:
+```json
+{
+  "host": "host",
+  "database": "database",
+  "user": "user",
+  "password": "password"
+}
+```
+9. Ainda no diretório pipeline, digite `python run.py`;
 
-## Dúvidas?
+## Como executar o projeto dbt
 
-Fale conosco pelo e-mail que foi utilizado para o envio desse desafio.
-
+1. No mesmo ambiente criado para executar o pipeline Prefect, navegue até a pasta **rio_brt_data**;
+2. Digite `dbt run`;
+3. Confira se os modelos foram criados com sucesso;
+4. Para ver a documentação, digite `dbt docs generate`;
+5. Em seguida, digite `dbt docs serve`, uma página web se abrirá com os dados das tabelas;
+6. Para limpar a pasta do projeto, digite `dbt clean`.

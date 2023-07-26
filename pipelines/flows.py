@@ -1,10 +1,6 @@
 from prefect import Flow, Parameter
-
-from tasks import (get_brt_data, 
-                   process_data, 
-                   save_data_to_csv,
-                   load_data_to_postgres)
-                   
+from tasks import (get_brt_data, load_data_to_postgres, process_data,
+                   save_data_to_csv)
 
 with Flow('Extracting BRT data') as flow:
 
