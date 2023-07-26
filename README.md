@@ -93,7 +93,7 @@ Repositório de instrução para o desafio técnico para vaga de Pessoa Engenhei
   "password": "password"
 }
 ```
-9. Ainda no diretório pipeline, digite `python run.py`;
+9. Ainda no diretório **pipeline**, digite `python run.py`;
 
 ## Como executar o projeto dbt
 
